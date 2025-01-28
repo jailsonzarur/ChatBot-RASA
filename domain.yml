@@ -1,33 +1,28 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - saudacao
+  - agendamento_consulta
+  - agendamento_especialidade
+  - agendamento_data_hora
+  - agredecimento
+  - finalizacao
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_saudacao:
+  - text: "Olá! Seja bem vindo ao atendimento virtual da Clínica MV. Como posso ajudá-lo?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_agendamento_consulta:
+  - text: "Claro! Para isso iremos encaminhar seus dados para a central de atendimento. Favor, me informe a especialidade que deseja."
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_agendamento_especialidade:
+  - text: "Certo. Agora me informe a data e hora que você prefere."
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_agradecimento:
+  - text: "Certo. Seus dados foram encaminhados para a central de atendimento, logo logo eles entrarão em contato com você! Posso ajudar com mais alguma coisa?"
 
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_finalizacao:
+  - text: "De nada! Até mais!"
 
 session_config:
   session_expiration_time: 60

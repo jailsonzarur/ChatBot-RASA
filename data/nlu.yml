@@ -1,91 +1,79 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: saudacao
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - oi
+    - oie
+    - olá
+    - boa tarde
+    - bom dia
+    - boa noite
+    - olá, tudo bem?
+    - oi, tudo bem?
+    - olá, como vai?
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
 
-- intent: affirm
+- intent: agendamento_consulta
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - eu gostaria de agendar um consulta
+    - quero agendar uma consulta
+    - agendamento de consulta, por favor
+    - gostaria de agendar uma consulta médica
+    - gostaria de reservar um horário para a consulta médica
+    - como faz para agendar um consulta?
+    - quero marcar uma consulta
+    - como faço para agendar uma consulta
+    - estou interessado em marcar uma consulta
+    - eu preciso agendar uma consulta
 
-- intent: deny
+- intent: agendamento_especialidade
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - gostaria de uma consulta com um urologista
+    - quero agendar uma consulta com o cardiologista
+    - preciso agendar uma consulta com o endocrino
+    - eu quero reservar um horário com o médico ortopedista.
+    - gostaria de reservar um horário com o nutricionista.
+    - otorrinolaringologista, por favor
+    - ortopedista
+    - cardiologista
+    - preciso de uma consulta com o oncologista
+    - quero uma consulta com o médico gastroenterologista
 
-- intent: mood_great
+- intent: agendamento_data_hora
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - Pode ser na próxima semana
+    - Na quinta-feira à tarde
+    - sexta de manhã
+    - No dia 10/05 pela manhã
+    - Amanhã, às 14:30
+    - dia 11/09 às 16:00 horas
+    - Depois de amanhã, às 18:00
+    - quarta-feira, manhã
+    - segunda-feira, no período da tarde
 
-- intent: mood_unhappy
+- intent: agredecimento
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - Obrigado
+    - Valeu
+    - Muito obrigado, tenha um ótimo dia
+    - certo, obrigado
+    - ok
+    - obg
+    - obrigado, até mais
+    - muito bom
+    - agradeço pela ajuda
 
-- intent: bot_challenge
+
+- intent: finalizacao
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Não, é só isso mesmo, obrigado
+    - por enquanto é só isso mesmp
+    - não, não preciso de mais nada
+    - Só isso, obrigado
+    - não
+    - Não preciso
+    - não, é só isso
+    - não, não há mais nada do que eu precise
+    - Somente isso
+
