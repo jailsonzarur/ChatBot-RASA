@@ -5,7 +5,7 @@ intents:
   - agendamento_consulta
   - agendamento_especialidade
   - agendamento_data_hora
-  - agredecimento
+  - agradecimento
   - finalizacao
 
 responses:
@@ -18,8 +18,11 @@ responses:
   utter_agendamento_especialidade:
   - text: "Certo. Agora me informe a data e hora que você prefere."
 
-  utter_agradecimento:
+  utter_agendamento_data_hora:
   - text: "Certo. Seus dados foram encaminhados para a central de atendimento, logo logo eles entrarão em contato com você! Posso ajudar com mais alguma coisa?"
+
+  utter_agradecimento:
+  - text: "Tenha um bom dia!"
 
   utter_finalizacao:
   - text: "De nada! Até mais!"
