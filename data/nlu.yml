@@ -1,6 +1,30 @@
 version: "3.1"
 
 nlu:
+
+- lookup: dia_semana
+  examples: |
+    -segunda-feira
+    -terça-feita
+    -quarta-feira
+    -quinta-feira
+    -sexta-feira
+    -segunda
+    -terça
+    -quarta
+    -quinta
+    -sexta
+
+- lookup: periodo_consulta
+  examples: |
+    - manhã
+    - tarde
+
+- regex: data_hora
+  examples: |
+    - \d{2}/\d{2}
+    - \d{2}/\d{2}/\d{2,4}
+
 - intent: saudacao
   examples: |
     - oi
@@ -29,25 +53,25 @@ nlu:
 
 - intent: agendamento_especialidade
   examples: |
-    - gostaria de uma consulta com um urologista
-    - quero agendar uma consulta com o cardiologista
-    - preciso agendar uma consulta com o endocrino
-    - eu quero reservar um horário com o médico ortopedista.
-    - gostaria de reservar um horário com o nutricionista.
-    - otorrinolaringologista, por favor
-    - ortopedista
-    - cardiologista
-    - preciso de uma consulta com o oncologista
-    - quero uma consulta com o médico gastroenterologista
+    - gostaria de uma consulta com um [urologista](especialidade)
+    - quero agendar uma consulta com o [cardiologista](especialidade)
+    - preciso agendar uma consulta com o [endocrino](especialidade)
+    - eu quero reservar um horário com o médico [ortopedista](especialidade).
+    - gostaria de reservar um horário com o [nutricionista](especialidade).
+    - [otorrinolaringologista](especialidade), por favor
+    - [ortopedista](especialidade)
+    - [cardiologista](especialidade)
+    - preciso de uma consulta com o [oncologista](especialidade)
+    - quero uma consulta com o médico [gastroenterologista](especialidade)
 
 - intent: agendamento_data_hora
   examples: |
-    - Pode ser na próxima semana
+    - Pode ser na próxima [terça-feira](dia_semana), pela [manhã](periodo_consulta).
     - Na quinta-feira à tarde
     - sexta de manhã
     - No dia 10/05 pela manhã
-    - Amanhã, às 14:30
-    - dia 11/09 às 16:00 horas
+    - periodo_consulta, às 14:30
+    - dia [11/09](data_hora) às 16:00 horas
     - Depois de amanhã, às 18:00
     - quarta-feira, manhã
     - segunda-feira, no período da tarde

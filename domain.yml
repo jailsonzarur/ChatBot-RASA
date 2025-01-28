@@ -7,6 +7,11 @@ intents:
   - agendamento_data_hora
   - agradecimento
   - finalizacao
+entities:
+  - dia_semana
+  - periodo_consulta
+  - data_hora
+  - especialidade
 
 responses:
   utter_saudacao:
