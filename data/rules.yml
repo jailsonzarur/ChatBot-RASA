@@ -7,5 +7,10 @@ rules:
   - intent: agradecimento
   - action: utter_agradecimento
 
+- rule: Reformular a Frase
+  steps:
+  - intent: nlu_fallback
+  - action: utter_reformular
+
 
 

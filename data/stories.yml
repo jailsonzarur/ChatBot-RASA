@@ -2,16 +2,16 @@ version: "3.1"
 
 stories:
 
-- story: Agendamento
+- story: inicio da conversa
   steps:
   - intent: saudacao
   - action: utter_saudacao
   - intent: agendamento_consulta
   - action: utter_agendamento_consulta
-  - intent: agendamento_especialidade
-  - action: utter_agendamento_especialidade
-  - intent: agendamento_data_hora
-  - action: utter_agendamento_data_hora
+  - action: agendamento_form
+  - active_loop: agendamento_form
+  - action: utter_info_central
   - intent: finalizacao
   - action: utter_finalizacao
+
 

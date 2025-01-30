@@ -4,18 +4,13 @@ nlu:
 
 - lookup: dia_semana
   examples: |
-    -segunda-feira
-    -terça-feita
-    -quarta-feira
-    -quinta-feira
-    -sexta-feira
     -segunda
     -terça
     -quarta
     -quinta
     -sexta
 
-- lookup: periodo_consulta
+- lookup: periodo
   examples: |
     - manhã
     - tarde
@@ -64,17 +59,29 @@ nlu:
     - preciso de uma consulta com o [oncologista](especialidade)
     - quero uma consulta com o médico [gastroenterologista](especialidade)
 
+- intent: agendamento_periodo
+  examples: |
+    - Pode ser pela [manhã](periodo).
+    - à [tarde](periodo)
+    - Quero à [manhã](periodo)
+    - pela [manhã](periodo)
+    - de [manhã](periodo)
+    - Pode ser à [tarde](periodo)
+    - Quero de [tarde](periodo)
+    - [manhã](periodo)
+    - [tarde](periodo)
+
 - intent: agendamento_data_hora
   examples: |
-    - Pode ser na próxima [terça-feira](dia_semana), pela [manhã](periodo_consulta).
-    - Na quinta-feira à tarde
-    - sexta de manhã
-    - No dia 10/05 pela manhã
-    - periodo_consulta, às 14:30
-    - dia [11/09](data_hora) às 16:00 horas
-    - Depois de amanhã, às 18:00
-    - quarta-feira, manhã
-    - segunda-feira, no período da tarde
+    - Pode ser na próxima [terça](dia_semana).
+    - Na [quinta](dia_semana)
+    - [sexta](dia_semana)
+    - [10/05](data_hora)
+    - dia [10/12/2024](data_hora)
+    - No dia [11/09](data_hora)
+    - Quero na [quarta](dia_semana)
+    - [quarta](dia_semana)
+    - Na [segunda](dia_semana).
 
 - intent: agredecimento
   examples: |

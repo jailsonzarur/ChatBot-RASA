@@ -1,37 +1,71 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - saudacao
-  - agendamento_consulta
-  - agendamento_especialidade
-  - agendamento_data_hora
-  - agradecimento
-  - finalizacao
+- agendamento_consulta
+- agendamento_data_hora
+- agendamento_periodo
+- agendamento_especialidade
+- agradecimento
+- finalizacao
+- saudacao
+
 entities:
-  - dia_semana
-  - periodo_consulta
-  - data_hora
-  - especialidade
+- data_hora
+- especialidade
+- periodo
+- dia_semana
+
+slots:
+  especialidade_medico:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: especialidade
+  periodo_consulta:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: periodo
+  data_hora_consulta:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: data_hora
+    - type: from_entity
+      entity: dia_semana
+
+forms:
+  agendamento_form:
+    required_slots:
+      - especialidade_medico
+      - periodo_consulta
+      - data_hora_consulta
 
 responses:
   utter_saudacao:
-  - text: "Olá! Seja bem vindo ao atendimento virtual da Clínica MV. Como posso ajudá-lo?"
-
+  - text: Olá! Seja bem vindo ao atendimento virtual da Clínica MV. Como posso ajudá-lo?
   utter_agendamento_consulta:
-  - text: "Claro! Para isso iremos encaminhar seus dados para a central de atendimento. Favor, me informe a especialidade que deseja."
-
-  utter_agendamento_especialidade:
-  - text: "Certo. Agora me informe a data e hora que você prefere."
-
-  utter_agendamento_data_hora:
-  - text: "Certo. Seus dados foram encaminhados para a central de atendimento, logo logo eles entrarão em contato com você! Posso ajudar com mais alguma coisa?"
-
+  - text: Claro! Para isso iremos encaminhar seus dados para a central de atendimento.
+  utter_ask_agendamento_form_especialidade_medico:
+  - text: Favor me informar a especialidade desejada.
+  utter_ask_agendamento_form_periodo_consulta:
+  - text: Qual o período(manhã/tarde) que você prefere?
+  utter_ask_agendamento_form_data_hora_consulta:
+  - text: Qual a data você gostaria de agendar a sua consulta?
+  utter_info_central:
+  - text: Certo. Seus dados ({especialidade_medico} - {data_hora_consulta} - {periodo_consulta}) foram encaminhados para a central de atendimento, logo logo eles entrarão em contato com você! Posso ajudar com mais alguma coisa?
   utter_agradecimento:
-  - text: "Tenha um bom dia!"
-
+  - text: Tenha um bom dia!
   utter_finalizacao:
-  - text: "De nada! Até mais!"
+  - text: De nada! Até mais!
+  utter_reformular:
+  - text: Me desculpe, não entendi o que você disse. Você poderia reformular a sua frase?
+  utter_default:
+  - text: Desculpe, eu não entendi. Você pode reformular?
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
