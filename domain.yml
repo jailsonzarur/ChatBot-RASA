@@ -7,7 +7,8 @@ intents:
 - agradecimento
 - finalizacao
 - saudacao
-
+actions:
+  - action_validar_especialidade
 entities:
 - data_hora
 - especialidade
@@ -54,8 +55,6 @@ responses:
   - text: Qual o período(manhã/tarde) que você prefere?
   utter_ask_agendamento_form_data_hora_consulta:
   - text: Qual a data você gostaria de agendar a sua consulta?
-  utter_info_central:
-  - text: Certo. Seus dados ({especialidade_medico} - {data_hora_consulta} - {periodo_consulta}) foram encaminhados para a central de atendimento, logo logo eles entrarão em contato com você! Posso ajudar com mais alguma coisa?
   utter_agradecimento:
   - text: Tenha um bom dia!
   utter_finalizacao:
